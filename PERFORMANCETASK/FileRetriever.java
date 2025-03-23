@@ -9,7 +9,8 @@ public class FileRetriever {
         String fileName = scanner.nextLine();
         System.out.println("Choose an option: ");
         System.out.println("1. Check file and get the absolute path");
-        System.out.println("2. Exit");
+        System.out.println("2. Check file and get the Relative path");
+        System.out.println("3. Exit");
         int choose = scanner.nextInt();
         switch(choose){
             case 1:
@@ -44,7 +45,7 @@ public class FileRetriever {
                     System.out.println("File exists");
                     System.out.println("Getting The file details...");
                     System.out.println("File name: " + file.getName());
-                    System.out.println("File path: " + file.getRelativePath());
+                    System.out.println("File path: " + file.toPath().toString());
                     System.out.println("File Parent Directory: " + file.getParent());
                     System.out.println("File size: " + file.length() + " bytes");
                     System.out.println("File Creation Time: " + Files.getAttribute(file.toPath(), "creationTime"));
@@ -55,7 +56,7 @@ public class FileRetriever {
                     System.out.println("File created successfully");
                     System.out.println("Getting The file details...");
                     System.out.println("File name: " + file.getName());
-                    System.out.println("File path: " + file.getRelativePath());
+                    System.out.println("File path: " + file.toPath().toString());
                     System.out.println("File Parent Directory: " + file.getParent());
                     System.out.println("File size: " + file.length() + " bytes");
                     System.out.println("File Creation Time: " + Files.getAttribute(file.toPath(), "creationTime"));
